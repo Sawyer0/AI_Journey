@@ -31,17 +31,17 @@ A Python script that creates a dramatic, Matrix-themed welcome message with ASCI
 ## Example Output
 
 ```
-Please enter your name: Neo
+Please enter your name: Anderson
 
     ✧･ﾟ: *✧･ﾟ:*  *:･ﾟ✧*:･ﾟ✧
 
     ╔══════════════════════╗
     ║                      ║
-    ║         Neo          ║
+    ║       Anderson       ║  
     ║                      ║
     ╚══════════════════════╝
 
-    Mr. Neo... I've been expecting you.
+    Mr. Anderson... I've been expecting you.
 ```
 
 ## Customization
