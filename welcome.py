@@ -123,8 +123,8 @@ def create_welcome_message(name):
     # Try to get a special response, fall back to random if none exists
     return get_special_response() or get_random_message()
 
-def get_matrix_quote():
-    quotes = [
+def get_matrix_quote(choice):
+    red_pill_quotes = [
         "There is no spoon.",
         "I know kung fu.",
         "The Matrix has you...",
@@ -132,7 +132,6 @@ def get_matrix_quote():
         "There is no escaping the Matrix.",
         "The Matrix is everywhere.",
         "I'm going to show you how deep the rabbit hole goes.",
-        "You take the blue pill, the story ends.",
         "You take the red pill, you stay in Wonderland.",
         "I'm trying to free your mind.",
         "But I can only show you the door.",
@@ -141,7 +140,25 @@ def get_matrix_quote():
         "That system is our enemy.",
         "When you're ready, you won't have to."
     ]
-    return random.choice(quotes)
+    
+    blue_pill_quotes = [
+        "The Matrix has you...",
+        "You take the blue pill, the story ends.",
+        "You wake up in your bed and believe whatever you want to believe.",
+        "The Matrix is the world that has been pulled over your eyes.",
+        "What you know you can't explain, but you feel it.",
+        "You've been living in a dream world.",
+        "The Matrix is everywhere.",
+        "It is all around us.",
+        "Even now, in this very room.",
+        "You can see it when you look out your window.",
+        "Or when you turn on your television.",
+        "You can feel it when you go to work.",
+        "When you go to church.",
+        "When you pay your taxes."
+    ]
+    
+    return random.choice(red_pill_quotes if choice == '1' else blue_pill_quotes)
 
 def validate_name(name):
     if not name.strip():
@@ -223,19 +240,19 @@ def main():
     
     # Display quotes with animation
     print("    ", end='')
-    animate_text(get_matrix_quote(), delay=0.03)
+    animate_text(get_matrix_quote(choice), delay=0.03)
     
     # 50% chance for a second quote
     if random.random() < 0.5:
         time.sleep(0.5)
         print("    ", end='')
-        animate_text(get_matrix_quote(), delay=0.03)
+        animate_text(get_matrix_quote(choice), delay=0.03)
     
     # 25% chance for a third quote
     if random.random() < 0.25:
         time.sleep(0.5)
         print("    ", end='')
-        animate_text(get_matrix_quote(), delay=0.03)
+        animate_text(get_matrix_quote(choice), delay=0.03)
 
 if __name__ == "__main__":
     main()
