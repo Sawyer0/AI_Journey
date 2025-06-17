@@ -143,9 +143,44 @@ def get_matrix_quote():
     ]
     return random.choice(quotes)
 
+def validate_name(name):
+    if not name.strip():
+        return False, "The Matrix cannot process an empty name."
+    if len(name) > 20:
+        return False, "That name is too long for the Matrix to process."
+    if any(char in name for char in "!@#$%^&*()_+{}|:<>?"):
+        return False, "The Matrix only accepts standard characters."
+    return True, name.strip()
+
+def get_user_choice():
+    print("\n    Choose your path:")
+    print("    1. Take the red pill")
+    print("    2. Take the blue pill")
+    while True:
+        try:
+            choice = input("    Enter your choice (1 or 2): ")
+            if choice in ['1', '2']:
+                return choice
+            print("    Invalid choice. The Matrix requires a clear decision.")
+        except:
+            print("    The Matrix cannot process that input.")
+
+def get_pill_response(choice, name):
+    if choice == '1':
+        return f"{name}, you've chosen the red pill.\nThe Matrix will show you how deep the rabbit hole goes..."
+    else:
+        return f"{name}, you've chosen the blue pill.\nYou will wake up in your bed and believe whatever you want to believe..."
+
 def main():
-    # Get the user's name
-    name = input("Please enter your first name: ")
+    # Get and validate the user's name
+    while True:
+        name = input("Please enter your first name: ")
+        is_valid, message = validate_name(name)
+        if is_valid:
+            name = message
+            break
+        print(f"\n    {message}")
+        print("    Please try again.")
     
     # Display the time-based decorative element
     print(create_decorative_element())
@@ -157,19 +192,28 @@ def main():
     print("\n    ", end='')
     time.sleep(1.5)  # Dramatic pause before the message
     
-    # Display the welcome message with animation
-    animate_text(create_welcome_message(name))
-    
-    # Analyze the name and display insights
+    # Analyze the name and display insights first
     name_analysis = analyze_name(name)
     if name_analysis:
-        time.sleep(1)
         print("\n    ", end='')
         animate_text("Analyzing your name in the Matrix...", delay=0.03)
         time.sleep(0.5)
         for insight in name_analysis:
             print("    ", end='')
             animate_text(insight, delay=0.03)
+    
+    # Display the welcome message with animation
+    time.sleep(1)
+    print("\n    ", end='')
+    animate_text(create_welcome_message(name))
+    
+    # Get user's pill choice
+    choice = get_user_choice()
+    
+    # Display pill response
+    time.sleep(1)
+    print("\n    ", end='')
+    animate_text(get_pill_response(choice, name))
     
     # Display Matrix quotes
     time.sleep(1)
