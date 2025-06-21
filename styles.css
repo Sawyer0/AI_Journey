@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 20px;
+    padding: 0;
     background-color: #f0f0f0;
     display: flex;
     flex-direction: column;
@@ -13,8 +13,84 @@ h1 {
     text-align: center;
     margin-top: 50px;
     margin-bottom: 30px;
+    width: 100%;
 }
 
+/* Biography section styles */
+.bio-section {
+    width: 100%;
+    padding: 40px 20px;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+    border-bottom: 4px solid #3498db;
+    margin-bottom: 40px;
+}
+
+.bio-section h2 {
+    color: #2c3e50;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    font-size: 1.8em;
+}
+
+.bio-section p {
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto 15px;
+}
+
+.journey-highlights {
+    background-color: rgba(248, 249, 250, 0.7);
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.journey-highlights h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.journey-highlights ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.journey-highlights li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+
+.journey-highlights li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+.journey-highlights strong {
+    color: #2c3e50;
+}
+
+.personal-touch {
+    max-width: 800px;
+    margin: 30px auto 0;
+    padding-top: 30px;
+    border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.personal-touch h3 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+/* Card styles */
 .card {
     background-color: white;
     border-radius: 10px;
@@ -68,4 +144,44 @@ h1 {
 .steps li {
     margin-bottom: 10px;
     color: #555;
+}
+
+/* Responsive adjustments */
+@media (max-width: 850px) {
+    .bio-section {
+        padding: 30px 15px;
+    }
+
+    .bio-section h2 {
+        font-size: 1.6em;
+    }
+
+    .journey-highlights {
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    .personal-touch {
+        margin: 20px auto 0;
+        padding-top: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+        margin-top: 30px;
+    }
+    
+    .card h2 {
+        font-size: 1.3em;
+    }
+
+    .bio-section h2 {
+        font-size: 1.4em;
+    }
 } 
