@@ -28,12 +28,40 @@ An interactive Python script that creates a dramatic, Matrix-themed welcome expe
 ### How to Run the Welcome Script
 
 1. Make sure you have Python installed on your system
-2. Navigate to the project directory
-3. Run the script:
+2. Clone this repository:
    ```bash
-   python welcome.py
+   git clone https://github.com/Sawyer0/AI_Journey.git
+   cd AI_Journey
    ```
-4. Follow the interactive prompts
+
+3. Create and activate a virtual environment:
+   ```bash
+   # Create the virtual environment
+   python -m venv venv
+
+   # Activate it on Windows (Git Bash)
+   source venv/Scripts/activate
+
+   # Activate it on Windows (Command Prompt)
+   venv\Scripts\activate
+
+   # Activate it on macOS/Linux
+   source venv/bin/activate
+
+   # You'll see (venv) in your terminal when it's active
+   ```
+
+4. Run the script:
+   ```bash
+   python main.py
+   ```
+
+5. When you're done, deactivate the virtual environment:
+   ```bash
+   deactivate
+   ```
+
+> **Note**: The virtual environment (venv) keeps the project's Python setup clean and isolated. Each user creates their own venv, which is why the `venv/` folder is not included in the repository.
 
 ### Example Output
 
@@ -67,7 +95,7 @@ A simple HTML webpage that marks the beginning of an AI journey.
 - Modern styling with custom CSS
 
 ### How to View
-Open `index.html` in any modern web browser to view the webpage.
+Visit [https://sawyer0.github.io/AI_Journey](https://sawyer0.github.io/AI_Journey) or open `index.html` in any modern web browser.
 
 ## Customization
 
@@ -84,6 +112,18 @@ You can modify either component:
 - Update the content to document your AI journey
 - Modify the styling in the CSS section
 - Add more interactive elements
+
+## Project Structure
+```
+AI_Journey/
+├── display/        # Animation and display functions
+├── messages/       # Message and response handling
+├── utils/         # Time-related utilities
+├── validation/    # Input validation
+├── main.py        # Main program
+├── index.html     # Project webpage
+└── styles.css     # Webpage styling
+```
 
 ## License
 
